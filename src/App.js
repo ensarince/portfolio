@@ -5,6 +5,7 @@ import Post from './components/Post'
 import SinglePost from './components/SinglePost'
 import Project from './components/Project'
 import Navbar from './components/Navbar';
+import Photos from './components/Photos';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/post/:slug' element={<SinglePost />} />
         <Route path='/post' element={<Post />} />
+        <Route path='/photos' element={<Photos />} />
         <Route path='/project' element={<Project />} />
       </Routes>
     </BrowserRouter>

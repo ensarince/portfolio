@@ -1,12 +1,12 @@
 import React from 'react'
-import image from '../DSC_0395.jpg';
+import background from '../imgs/8.jpg';
 
 export default function Home() {
   return (
-    <main>
-      <img src={image} alt="profile" className='absolute object-cover w-full h-full' />
-      <section className='relative flex justify-center min-h-screen pt-12 lg:pt-64'>
-        <h3 className='text-green-100  cursive leading-none home-name'>rahatsız.</h3>
+    <main className='container mx-auto flex justify-between'>
+      <img src={background} alt="profile" className='absolute object-cover object-contain w-full h-full' />
+      <section className='container relative flex justify-center min-h-screen pt-12 lg:pt-64'>
+        <h2 className='text-zinc-100 text-8xl cursive inline-flex leading-none '>ensar.ince</h2>
       </section>
     </main>
   )

@@ -32,35 +32,37 @@ export default {
       },
     },
     {
-      type: 'array',
       name: 'images',
-      of: [ // The "of"-property must be set, and it must be an array
+      title: 'Images',
+      type: 'array',
+      of: [
         {
-          type: 'image', // type is required
-          name: 'image1',
-          title: 'Image 1'
+          name: 'image',
+          title: 'Image',
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+          fields: [
+            {
+              name: 'description',
+              title: 'description',
+              type: 'string',
+            },
+          ],
         },
-        {
-          type: 'image',
-          name: 'image2',
-          title: 'Image 2'
-        },
-        {
-          type: 'image',
-          name: 'image3',
-          title: 'Image 3'
-        },{
-          type: 'image',
-          name: 'image4',
-          title: 'Image 4'
-        },{
-          type: 'image',
-          name: 'image5',
-          title: 'Image 5'
-        },
-      ]
-    },
-    {
+      ],
+    }
+/*     {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      options: {
+        hotspot: true,
+      },
+      of: [{ type: 'image'}],
+    } */
+    ,{
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
