@@ -1,8 +1,17 @@
 export default {
   name: 'gallery',
-  type: 'object',
+  type: 'document',
   title: 'Gallery',
   fields: [
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'title',
+        maxLength: 96,
+      },
+    },
     {
       name: 'images',
       type: 'array',
