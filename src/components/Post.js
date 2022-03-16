@@ -22,7 +22,8 @@ export default function Post() {
       .then((data) => setPost(data))
       .catch(console.error);
   }, [])
-  
+
+  console.log(postData,"blog")
   return (
     <main className='bg-gray-300 min-h-screen p-12'>
       <section className='container mx-auto'>
