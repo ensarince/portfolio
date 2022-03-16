@@ -40,24 +40,30 @@ export default function Photos() {
 
 
   return (
-    <main className='container mx-auto flex justify-between'>
-      <img src={background} alt="profile" className='absolute object-cover object-contain w-full h-full' />
-      <section className='container relative flex justify-center min-h-screen pt-12 lg:pt-64'>
-{/*         <div>
-          <img src={urlFor(postData.imageUrls).url()} width={400} />
-          <p>{postData?.caption}</p>
-        </div>
- */}
-        <div>
-           {imageUrls && imageUrls.map((item, i) => (
+    <main className='bg-[(background)] min-h-screen p-12' > 
+    <section className='container mx-auto'>
+      <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Photography</h1>
+      <br />
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+      {imageUrls && imageUrls.map((item, i) => (
+        <article key={item}>
+
+          <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={item}>
+            <img src={imageUrls[i].asset.url} alt={imageUrls[i].asset.url} className="w-full h-full rounded-r object-cover absolute" /> 
+            <span className='block relative h-full flex justify-end items-end pr-4 pb-4'>
+              <h3 className='text-white text-lg font-blog px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded'>tanım</h3>
+            </span>
+          </span>
+          
+        </article>
+        ))}
+      </div>
+    </section>
+  </main>    
+  /*       {imageUrls && imageUrls.map((item, i) => (
                   <div>
                     <img src={imageUrls[i].asset.url} key={item} width={400} />
                   </div>             
-            ))} 
-          
-{/*           <img src={postData.images[1].asset.url} width={400} /> */}
-        </div>
-      </section>
-    </main>
-  )
-}
+            ))} */  
+    )
+  }
