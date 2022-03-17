@@ -29,8 +29,9 @@ export default function SinglePost() {
       },
       "images": images[]{
         _id,
-        "url" : asset-> url,
-        description
+        "url" : asset-> 
+        url,
+        description,
       },
       "imageUrls": images[].asset->url,
       body,

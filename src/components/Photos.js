@@ -19,9 +19,9 @@ export default function Photos() {
 *[_type == "gallery"] {  
   title,
   images[]{
-    asset->{
-     url
-    },
+    "url" : asset->
+     url,
+     alt
   },  
 }`);
   useEffect(() => {
@@ -31,27 +31,23 @@ export default function Photos() {
       .catch(console.error);
   }, []);
 
-  //if(!postData) return <div>Loading...</div>
-  console.log(postData,"photos")
-
+  //cant reach the data, so first loading shows, functioning like await
+  if(!postData) return <div>Loading...</div>
+  
   const imageUrls = postData[0].images;
 
-  console.log(imageUrls);
-
-
   return (
-    <main className='bg-[(background)] min-h-screen p-12' > 
+    <main className="bg-[url('../imgs/8.jpg')] bg-cover  min-h-screen p-12"> 
     <section className='container mx-auto'>
       <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Photography</h1>
       <br />
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {imageUrls && imageUrls.map((item, i) => (
-        <article key={item}>
-
-          <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={item}>
-            <img src={imageUrls[i].asset.url} alt={imageUrls[i].asset.url} className="w-full h-full rounded-r object-cover absolute" /> 
-            <span className='block relative h-full flex justify-end items-end pr-4 pb-4'>
-              <h3 className='text-white text-lg font-blog px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded'>tanım</h3>
+        <article key={i}>
+          <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={i}>
+            <img src={imageUrls[i].url} key={i} alt={imageUrls[i].url} className="w-full h-full rounded-r object-cover absolute" /> 
+            <span className='block relative h-full flex justify-end items-end pr-3 pb-3'>
+              <h3 className='text-white text-md font-blog px-3 py-4  bg-red-400 bg-opacity-40 rounded'>{imageUrls[i].alt}</h3>
             </span>
           </span>
           
@@ -60,10 +56,5 @@ export default function Photos() {
       </div>
     </section>
   </main>    
-  /*       {imageUrls && imageUrls.map((item, i) => (
-                  <div>
-                    <img src={imageUrls[i].asset.url} key={item} width={400} />
-                  </div>             
-            ))} */  
     )
   }
