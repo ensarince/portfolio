@@ -4,6 +4,8 @@ import { useParams } from 'react-router-dom';
 import background from '../imgs/8.jpg';
 import imageUrlBuilder from '@sanity/image-url'
 import SanityBlockContent from '@sanity/block-content-to-react';
+import { Slide } from 'react-slideshow-image';
+import 'react-slideshow-image/dist/styles.css'
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source){
@@ -13,7 +15,12 @@ function urlFor(source){
 export default function Photos() {
 
   const [postData, setPostData] = useState(null);
+  const [isSlide, setisSlide] = useState(false)
   //const { slug } = useParams();
+
+  function slideHandler(){
+    setisSlide(true);
+  }
 
   const postItems = (`
 *[_type == "gallery"] {  
@@ -36,24 +43,46 @@ export default function Photos() {
   
   const imageUrls = postData[0].images;
 
+//SLIDER IMAGES
+  const slideImages = postData[0].images;
+
   return (
-    <main className="bg-[url('../imgs/8.jpg')] bg-cover  min-h-screen p-12"> 
+    <main className="bg-cover  min-h-screen p-12"> 
     <section className='container mx-auto'>
       <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Photography</h1>
       <br />
+
+      {isSlide ? (
+              <div className="carousel slide relative">
+                  <div className="carousel-inner relative w-full overflow-hidden">
+                    <div className="carousel-item active relative float-left w-full">
+                        <Slide>
+                        {slideImages.map((slideImage, index)=> (
+                            <div className="each-slide" key={index}>
+                              <img src={slideImage.url} alt={slideImage.alt} className="block w-full" />
+                            </div>
+                          ))} 
+                        </Slide> 
+                    </div>
+                  </div>
+              </div>
+
+           ) : 
+
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {imageUrls && imageUrls.map((item, i) => (
-        <article key={i}>
+        <article key={i} onClick={slideHandler} className="cursor-pointer">
           <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={i}>
             <img src={imageUrls[i].url} key={i} alt={imageUrls[i].url} className="w-full h-full rounded-r object-cover absolute" /> 
             <span className='block relative h-full flex justify-end items-end pr-3 pb-3'>
               <h3 className='text-white text-md font-blog px-3 py-4  bg-red-400 bg-opacity-40 rounded'>{imageUrls[i].alt}</h3>
             </span>
           </span>
-          
         </article>
         ))}
+        
       </div>
+  }
     </section>
   </main>    
     )
