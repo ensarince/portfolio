@@ -16,12 +16,12 @@ export default function Navbar() {
           <NavLink to="/photos" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black active:bg-red-700 ">
             Photos
           </NavLink>
-          <NavLink to="/project" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black active:bg-red-700 ">
+{/*           <NavLink to="/project" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black active:bg-red-700 ">
             Projects
-          </NavLink>
-          <NavLink to="/about" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black active:bg-red-700 ">
+          </NavLink> */}
+{/*           <NavLink to="/about" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black active:bg-red-700 ">
             About Me
-          </NavLink>
+          </NavLink> */}
         </nav>
         <div className='inline-flex py-3 px-3 my-6'>
           <SocialIcon url='https://www.instagram.com/nsrnce/' className='mr-4' target="_blank" fgColor="#fff" style={{height: 35, width: 35}}/>

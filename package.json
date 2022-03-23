@@ -16,6 +16,7 @@
     "react-scripts": "5.0.0",
     "react-slideshow-image": "^3.7.0",
     "react-social-icons": "^5.11.0",
+    "tw-elements": "^1.0.0-alpha11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
