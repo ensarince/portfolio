@@ -51,7 +51,8 @@ export default function Photos() {
     <section className='container mx-auto'>
       <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Photography</h1>
       <br />
-       {isSlide ? (
+      <br />
+{/*        {isSlide ? (
 
           <div id="carouselExampleCaptions" className="carousel slide relative" data-bs-ride="carousel">
           <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
@@ -119,11 +120,11 @@ export default function Photos() {
           </button>
         </div>
 
-       ) : 
+       ) :  */}
 
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {imageUrls && imageUrls.map((item, i) => (
-        <article key={i} onClick={slideHandler} className="cursor-pointer">
+        <article key={i} /* onClick={slideHandler} className="cursor-pointer" */>
           <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={i}>
             <img src={imageUrls[i].url} key={i} alt={imageUrls[i].url} className="w-full h-full rounded-r object-cover absolute" /> 
             <span className='block relative h-full flex justify-end items-end pr-3 pb-3'>
@@ -133,7 +134,7 @@ export default function Photos() {
         </article>
         ))}
       </div>
-  }
+  {/* } */}
     </section>
   </main>    
     )
