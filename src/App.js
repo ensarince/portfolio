@@ -6,6 +6,7 @@ import SinglePost from './components/SinglePost'
 import Project from './components/Project'
 import Navbar from './components/Navbar';
 import Photos from './components/Photos';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path='/photos' element={<Photos />} />
         <Route path='/project' element={<Project />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   )
 
