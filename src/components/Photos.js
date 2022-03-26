@@ -52,75 +52,7 @@ export default function Photos() {
       <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Photography</h1>
       <br />
       <br />
-{/*        {isSlide ? (
 
-          <div id="carouselExampleCaptions" className="carousel slide relative" data-bs-ride="carousel">
-          <div className="carousel-indicators absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="0"
-              className="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#carouselExampleCaptions"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-          <div className="carousel-inner relative w-full overflow-hidden">
-        <Slide>
-            {slideImages.map((slideImage, index)=> (
-              
-                <div className="carousel-item active relative float-left w-full">
-                <img src={slideImage.url} className="block w-full" alt="..."/>
-                <div className="carousel-caption hidden md:block absolute text-center">
-                  <h5 className="text-xl">{slideImage.alt}</h5>
-                </div>
-                </div>
-                
-              ))} 
-        </Slide>
-          </div>
-          <button
-            className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-            <span data-bs-slide="prev" className="visually-hidden p-10  text-white text-xl">Previous</span>
-          </button>
-          <button
-            className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
-            type="button"
-            data-bs-target="#carouselExampleCaptions" 
-          >
-            <span className="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
-            <span  className="visually-hidden text-white text-xl p-10">Next</span>
-          </button>
-
-          <button
-            className="carousel-control-prev absolute top-5 bottom-30 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline"
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            onClick={slideHandler}
-          >
-            <span className="carousel-control-next-icon  inline-block bg-no-repeat" aria-hidden="true"></span>
-            <span  className="visually-hidden text-white text-xl p-10">Back</span>
-          </button>
-        </div>
-
-       ) :  */}
 
       <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {imageUrls && imageUrls.map((item, i) => (
@@ -134,7 +66,6 @@ export default function Photos() {
         </article>
         ))}
       </div>
-  {/* } */}
     </section>
   </main>    
     )
