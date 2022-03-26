@@ -11,7 +11,7 @@ export default function Navbar() {
             Ensar
           </NavLink>
           <NavLink to="/post" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200  hover:text-gray-700 active:bg-red-700"> 
-            Blog Posts
+            Blog
           </NavLink>
           <NavLink to="/photos" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-gray-700 active:bg-red-700 ">
             Photos
