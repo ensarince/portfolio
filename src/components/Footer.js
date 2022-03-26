@@ -8,7 +8,7 @@ const Footer = () => {
       <div className='flex justify-center mx-auto py-6 '>
         <SocialIcon url='https://www.instagram.com/nsrnce/' className='mr-4' target="_blank" fgColor="#fff" style={{height: 35, width: 35}}/>
         <SocialIcon url='https://www.youtube.com/channel/UCQ-mC4AvDdFi8BufERuzV1g' className='mr-4' target="_blank" fgColor="#fff" style={{height: 35, width: 35}}/>
-        <SocialIcon url='https://ensrnce.wixsite.com/main/photography' className='mr-4' target="_blank" fgColor="#fff" style={{height: 35, width: 35}}/>
+        <SocialIcon url='https://www.linkedin.com/in/ensar-ince-67a580155/' className='mr-4' target="_blank" fgColor="#fff" style={{height: 35, width: 35}}/>
       </div>
   </header>
   )
