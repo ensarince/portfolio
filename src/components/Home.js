@@ -10,11 +10,11 @@ export default function Home() {
       <img src={background} alt="profile" className='absolute object-cover object-contain w-full h-full' />
       <section className='container relative flex justify-center min-h-screen pt-12 lg:pt-64 md:text-6xl sm:text-xl'>
         <h2 className='text-white text-8xl  leading-none '>
-        <NavLink to="/post" className="text-white hover:text-red-600">
+        <NavLink to="/post" className="text-white hover:text-red-600 cursive">
           blog
         </NavLink>
         .
-        <NavLink to="/photos" className="text-white hover:text-red-600">
+        <NavLink to="/photos" className="text-white hover:text-red-600 cursive">
           photos
         </NavLink>
 

@@ -49,7 +49,7 @@ export default function Photos() {
   return (
     <main className="bg-cover  min-h-screen p-12"> 
     <section className='container mx-auto'>
-      <h1 className='text-5xl text-gray-600 flex justify-center'>Photography</h1>
+      <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Photography</h1>
       <br />
       <br />
 
