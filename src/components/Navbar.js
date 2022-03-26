@@ -16,12 +16,12 @@ export default function Navbar() {
           <NavLink to="/photos" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-gray-700 cursive active:bg-red-700 ">
             Photos
           </NavLink>
-          <NavLink to="/project" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black cursive active:bg-red-700 ">
+{/*           <NavLink to="/project" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black cursive active:bg-red-700 ">
             Projects
-          </NavLink>
-          <NavLink to="/about" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black cursive active:bg-red-700 ">
+          </NavLink> */}
+{/*           <NavLink to="/about" className="inline-flex items-center mr-4 py-3 my-6 rounded text-red-200 hover:text-black cursive active:bg-red-700 ">
             About Me
-          </NavLink>
+          </NavLink> */}
         </nav>
       </div>
     </header>

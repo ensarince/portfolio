@@ -59,7 +59,7 @@ export default function Photos() {
         <article key={i} /* onClick={slideHandler} className="cursor-pointer" */>
           <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={i}>
             <img src={imageUrls[i].url} key={i} alt={imageUrls[i].url} className="w-full h-full rounded-r object-cover absolute" /> 
-            <span className='block relative h-full flex justify-end items-end pr-3 pb-3'>
+            <span className='block relative h-full  flex justify-end items-end pr-3 pb-3'>
               <h3 className='text-white text-md font-blog px-3 py-4 bg-red-400 bg-opacity-40 rounded'>{imageUrls[i].alt}</h3>
             </span>
           </span>

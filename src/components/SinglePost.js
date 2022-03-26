@@ -47,7 +47,7 @@ export default function SinglePost() {
     <main className='bg-gray-200 min-h-screen p-3'>
       <article className='container shadow-lg bg-gray-400 rounded-lg'>
         <header className='relative'>
-          <div className='absolute h-full w-full flex items-center justify-center p-8'>
+          <div className='absolute h-full w-full flex items-center justify-center p-3'>
             <div className='bg-white bg-opacity-60 rounded p-12'>
               <h1 className='cursive text-3xl lg:text-6xl text-gray-600 mb-4'>{singlePost.title}</h1>
               <div className='flex justify-center text-gray-800'>
@@ -58,7 +58,7 @@ export default function SinglePost() {
           </div>
           <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className="w-full object-cover rounded-t" style={{height: "400px"}} />
         </header>
-        <div className='px-16 lg:px-48 content-center py-12 lg:py-20 prose lg:prose-xl max-w-full'>
+        <div className='px-5 lg:px-48 content-center py-12 lg:py-20 prose lg:prose-xl max-w-full'>
           <SanityBlockContent blocks={singlePost.body} projectId={process.env.REACT_APP_PROJECT_ID} dataset="production" />
             <div>
               {singlePost.imageUrls && singlePost.imageUrls.map((item, i) => (
