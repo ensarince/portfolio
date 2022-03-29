@@ -66,11 +66,18 @@ export default {
       name: 'publishedAt',
       title: 'Published at',
       type: 'datetime',
+      options: {
+        dateFormat: 'DD/MM/YYYY,',
+        timeFormat: 'h:ma',
+      },
     },
     {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      options: {
+        dateFormat: 'YYYY-MM-DD',
+      },
     },
   ],
 

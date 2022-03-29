@@ -34,6 +34,8 @@ export default function SinglePost() {
         description,
       },
       "imageUrls": images[].asset->url,
+      publishedAt,
+      "timeSincePublished": dateTime(now()) - dateTime(publishedAt),
       body,
       "name": author->name,
       "authorImage": author->image
@@ -42,6 +44,8 @@ export default function SinglePost() {
   }, [slug])
 
   if(!singlePost) return <div>Loading...</div>
+
+  const days = Math.floor(singlePost.timeSincePublished / 86400);
 
   return (
     <main className='bg-gray-200 min-h-screen p-3'>
@@ -52,8 +56,11 @@ export default function SinglePost() {
               <h1 className='cursive text-3xl lg:text-6xl text-gray-600 mb-4'>{singlePost.title}</h1>
               <div className='flex justify-center text-gray-800'>
                 <img src={urlFor(singlePost.authorImage).url()} alt={singlePost.name} className="w-20 h-20 rounded-full"/>
-              </div>
-              <p className='cursive flex items-center pl-2 text-2xl'>{singlePost.name}</p>
+             </div>
+             <div className='flex justify-center'>
+                <p className='cursive flex px-10 text-2xl'>{singlePost.name}</p>
+             </div>
+             <p className=' px-10 pl-3 cursive text'>{days} gün önce</p>  
             </div>
           </div>
           <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className="w-full object-cover rounded-t" style={{height: "400px"}} />
