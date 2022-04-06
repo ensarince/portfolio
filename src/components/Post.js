@@ -1,10 +1,12 @@
 import React ,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import  sanityClient from '../client';
+import {motion} from 'framer-motion';
 
 export default function Post() {
 
   const [postData, setPost] = useState(null)
+  const [filtered, setFiltered] = useState([])
 
   useEffect(() => {
     sanityClient
@@ -25,10 +27,15 @@ export default function Post() {
 
   return (
     <main className='bg-gray-300 min-h-screen p-12'>
+{/*       <button className='bg-red-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'>Hepsi</button>
+      <button className='bg-red-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'>Tırmanış</button>
+      <button className='bg-red-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'>Siyasi</button>
+      <button className='bg-red-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'>Diğer</button> */}
+
       <section className='container mx-auto'>
         <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Blog</h1>
         <br />
-        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <motion.div layout className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {postData && postData.map((post, index) => (
           <article key={index}>
             <Link to={"/post/" +post.slug.current} key={post.slug.current}>
@@ -41,7 +48,7 @@ export default function Post() {
             </Link>
           </article>
           ))}
-        </div>
+        </motion.div>
       </section>
     </main>
   )

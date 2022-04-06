@@ -23,6 +23,20 @@ export default {
       type: 'reference',
       to: {type: 'author'},
     },
+/*     {
+      title: 'Type',
+      name: 'types',
+      type: 'string',
+      of: [
+        {
+          type: 'string',
+          list: [
+            {type: 'tırmanış'},
+            {type: 'siyasi'}
+          ]
+        }
+      ]
+    }, */
     {
       name: 'mainImage',
       title: 'Main image',
@@ -53,15 +67,6 @@ export default {
         },
       ],
     }
-/*     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      options: {
-        hotspot: true,
-      },
-      of: [{ type: 'image'}],
-    } */
     ,{
       name: 'publishedAt',
       title: 'Published at',
