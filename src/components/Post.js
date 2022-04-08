@@ -1,7 +1,6 @@
 import React ,{useState, useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import  sanityClient from '../client';
-import {motion} from 'framer-motion';
 
 export default function Post() {
 
@@ -25,6 +24,8 @@ export default function Post() {
       .catch(console.error);
   }, [])
 
+  console.log(postData)
+
   return (
     <main className='bg-gray-300 min-h-screen p-12'>
 {/*       <button className='bg-red-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded'>Hepsi</button>
@@ -35,7 +36,7 @@ export default function Post() {
       <section className='container mx-auto'>
         <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Blog</h1>
         <br />
-        <motion.div layout className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div layout className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
           {postData && postData.map((post, index) => (
           <article key={index}>
             <Link to={"/post/" +post.slug.current} key={post.slug.current}>
@@ -48,7 +49,7 @@ export default function Post() {
             </Link>
           </article>
           ))}
-        </motion.div>
+        </div>
       </section>
     </main>
   )
