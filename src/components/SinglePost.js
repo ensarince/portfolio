@@ -35,7 +35,6 @@ export default function SinglePost() {
       },
       "imageUrls": images[].asset->url,
       publishedAt,
-      "timeSincePublished": dateTime(now()) - dateTime(publishedAt),
       body,
       "name": author->name,
       "authorImage": author->image
@@ -45,7 +44,11 @@ export default function SinglePost() {
 
   if(!singlePost) return <div>Loading...</div>
 
-  const days = Math.floor(singlePost.timeSincePublished / 86400);
+  //format date 
+  const date = new Date(singlePost.publishedAt);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', options);
+
 
   return (
     <main className='bg-gray-200 min-h-screen p-3'>
@@ -60,7 +63,7 @@ export default function SinglePost() {
              <div className='flex justify-center'>
                 <p className='cursive flex px-10 text-2xl'>{singlePost.name}</p>
              </div>
-             <p className=' px-10 pl-3 cursive text'>{days} gün önce</p>  
+             <p className=' px-10 pl-3 cursive text'>{formattedDate}</p>    
             </div>
           </div>
           <img src={singlePost.mainImage.asset.url} alt={singlePost.title} className="w-full object-cover rounded-t" style={{height: "400px"}} />
