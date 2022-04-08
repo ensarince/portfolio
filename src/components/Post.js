@@ -5,13 +5,14 @@ import  sanityClient from '../client';
 export default function Post() {
 
   const [postData, setPost] = useState(null)
-  const [filtered, setFiltered] = useState([])
+  //const [filtered, setFiltered] = useState([])
 
   useEffect(() => {
     sanityClient
       .fetch(`*[_type == "post"]{
         title,
         slug,
+        publishedAt,
         mainImage{
           asset->{
             _id,
@@ -23,8 +24,14 @@ export default function Post() {
       .then((data) => setPost(data))
       .catch(console.error);
   }, [])
+  
+    if(!postData) return <div>Loading...</div>
 
-  console.log(postData)
+    //sort posts by date
+  const sortedPosts = postData.sort((a, b) => {
+    return new Date(b.publishedAt) - new Date(a.publishedAt);
+  });
+
 
   return (
     <main className='bg-gray-300 min-h-screen p-12'>
@@ -37,7 +44,7 @@ export default function Post() {
         <h1 className='text-5xl text-gray-600 flex justify-center cursive'>Blog</h1>
         <br />
         <div layout className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
-          {postData && postData.map((post, index) => (
+          {sortedPosts && sortedPosts.map((post, index) => (
           <article key={index}>
             <Link to={"/post/" +post.slug.current} key={post.slug.current}>
             <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={index}>
