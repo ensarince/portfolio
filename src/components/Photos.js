@@ -6,7 +6,6 @@ import imageUrlBuilder from '@sanity/image-url'
 import SanityBlockContent from '@sanity/block-content-to-react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
-import { motion } from 'framer-motion';
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source){
   return builder.image(source)
@@ -54,7 +53,7 @@ export default function Photos() {
       <br />
 
 
-      <motion.div layout className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+      <div layout className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
       {imageUrls && imageUrls.map((item, i) => (
         <article key={i} /* onClick={slideHandler} className="cursor-pointer" */>
           <span className='block h-64 relative rounded shadow leading-snug bg-white border-l-8 border-red-400' key={i}>
@@ -65,7 +64,7 @@ export default function Photos() {
           </span>
         </article>
         ))}
-      </motion.div>
+      </div>
     </section>
   </main>    
     )
